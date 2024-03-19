@@ -1,4 +1,8 @@
 # html-odtwarzacz
+## Styl indeksu plików i skrypt co umożliwia odtwarzanie muzyki w tej samej karcie. Muzyka otwiera się u góry i jest odtwarzacz. 
+## Odtwarzacz:
+![odtwarzacz](muzyka.png)
+
 Weź se folder 'index-styl'' i daj go do roota serwera apache żeby można było mieć do niego dostęp po prostu wpisując 127.0.0.1/index-styl/ do przeglądarki
 
 Weź se też 'NORMALNY.htaccess' i daj go też do roota tam gdzie folder 'index-styl' jest. Zmień nazwę na '.htaccess'.
