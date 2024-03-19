@@ -1,0 +1,51 @@
+body{
+    background-color: #111;
+    color: #fff !important;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: cursive !important;
+}
+a{
+    color: #fff !important;
+    text-decoration: none;
+}
+hr{
+    display: none;
+}
+th:not(:nth-of-type(2)){
+    text-align: right
+}
+table{
+    border-collapse: collapse;
+    font-size: 24px;
+    width: 100%
+}
+table tr td{
+    padding: 10px
+}
+table tr td:first-of-type{
+    width: 32px;
+    vertical-align:middle;
+    padding-bottom: 0px;
+    text-align: center;
+    align-items: center;
+}
+tr:nth-child(2n+1){
+    background-color: #222
+}
+iframe{
+    border: 0px solid #0000;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+div.odtwarzacz-spacer{
+    display: block;
+    height: 40px;
+    width: 100%
+}

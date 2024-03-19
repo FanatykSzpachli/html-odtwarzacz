@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index-styl/styl.css">
+    <script>
+        //alert('Pobieraj przez SMB!!!');
+        function odtwarzacz(){
+            var linki = document.getElementsByTagName("a");
+            for(var i = 4; i<linki.length; i++){
+                var nazwaLinku = linki[i].innerText;
+                if(nazwaLinku[nazwaLinku.length-1]=='3'){
+                    console.log(nazwaLinku+" to muzyka");
+                    linki[i].setAttribute("target", "odtwarzacz-iframe")
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="odtwarzacz()">
+    <div class="odtwarzacz-spacer"></div>
+    <iframe src="" id="odtwarzacz-iframe" name="odtwarzacz-iframe"></iframe>
