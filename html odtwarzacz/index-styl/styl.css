@@ -1,5 +1,5 @@
 body{
-    background-color: #111;
+    background-color: #1a1a1a;
     color: #fff !important;
     margin: 0;
     border: 0;
@@ -34,18 +34,64 @@ table tr td:first-of-type{
 tr:nth-child(2n+1){
     background-color: #222
 }
+tr:nth-child(2n){
+    background-color: #111
+}
 iframe{
     border: 0px solid #0000;
     height: 40px;
-    width: 100%;
+    width: calc(100% - 150px);
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    background-color: #1a1a1a;
+    z-index: 5;
 
 }
 div.odtwarzacz-spacer{
     display: block;
+    height: 80px;
+    width: 100%;
+}
+div.selektor{
     height: 40px;
-    width: 100%
+    width: 150px;
+    position: fixed;
+    top:0;
+    right:0;
+}
+.selektor{
+    background-color: #1a1a1a;
+    z-index: 5;
+}
+.selektor table{
+    height: 40px
+}
+.selektor table, .selektor table *{
+    background-color: #0000 !important;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    user-select: none;
+}
+h1{
+    background-color: #1a1a1a;
+    width: 100%;
+    color: #fff;
+    font-size: 32px;
+    margin: 0px;
+    text-align: center;
+    display: block;
+    position: fixed;
+    left: 0;
+    right:0;
+    transition: 300ms;
+}
+h1.widoczne{
+
+    top: 40px;
+
+}
+h1.niewidoczne{
+    top: -40px;
 }
