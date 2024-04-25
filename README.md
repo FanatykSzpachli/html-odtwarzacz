@@ -1,6 +1,7 @@
 # html-odtwarzacz
 # Przeznaczony do używania z serwerem apache
 ## Styl indeksu plików i skrypt co umożliwia odtwarzanie muzyki w tej samej karcie. Muzyka otwiera się u góry i jest odtwarzacz. 
+## Można też pobierać pliki klikając checkbox "Pobieranie" i klikając na muzykę do pobrania
 ## Odtwarzacz:
 ![odtwarzacz](muzyka.png)
 
