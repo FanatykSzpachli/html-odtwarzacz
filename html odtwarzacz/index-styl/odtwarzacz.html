@@ -35,9 +35,12 @@
         function pobierz(){
             var linki = document.getElementsByTagName("a");
             for(var i=4; i<linki.length; i++){
-                linki[i].setAttribute("download", "");
-                linki[i].setAttribute("target", "_blank")
-
+                var nazwaLinku = linki[i].innerText;
+                if(nazwaLinku[nazwaLinku.length-1]=='3'){
+                    linki[i].setAttribute("download", "");
+                    linki[i].setAttribute("target", "_blank")
+                    console.log('dodalo do '+nazwaLinku)
+                }
             }
         }
 
@@ -55,4 +58,4 @@
     <div class="odtwarzacz-spacer"></div>
     <iframe src="" id="odtwarzacz-iframe" name="odtwarzacz-iframe"></iframe>
     <div class="selektor"><table><tr><td><label for="pobieranie"><input name="pobieranie" onclick="zmiana()" id="pobieranie" type="checkbox" autocomplete="off">Pobieranie</label></td></tr></table></div>
-    <h1 id="tytul" class="niewidoczne">asdsad</h1>
+    <h1 id="tytul" class="niewidoczne">Nie wybrano muzyki</h1>
