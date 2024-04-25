@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index-styl/styl.css">
+    <script>
+        function zmiana(){
+            if(document.getElementById('pobieranie').checked){
+                pobierz()
+                document.getElementById('tytul').setAttribute("class", "niewidoczne")
+            } else{
+                odtwarzacz();
+                document.getElementById('tytul').setAttribute("class", "widoczne")
+
+            }
+        }
+        function odtwarzacz(){
+            var linki = document.getElementsByTagName("a");
+            for(var i = 4; i<linki.length; i++){
+                var nazwaLinku = linki[i].innerText;
+                if(nazwaLinku[nazwaLinku.length-1]=='3'){
+                    nazwaLinkuCzysta = nazwaLinku.replaceAll("'", "`");
+                    nazwaLinku = nazwaLinkuCzysta;
+                    nazwaLinkuCzysta = nazwaLinku.replaceAll('"', '”');
+                    
+                    console.log(nazwaLinkuCzysta+" to muzyka");
+                    linki[i].setAttribute("target", "odtwarzacz-iframe")
+                    linki[i].removeAttribute("download");
+                    var coDoSkryptu = "logujNazwe('"+nazwaLinkuCzysta+"')";
+                    linki[i].setAttribute("onclick", coDoSkryptu)
+                }
+            }
+        }
+        function pobierz(){
+            var linki = document.getElementsByTagName("a");
+            for(var i=4; i<linki.length; i++){
+                linki[i].setAttribute("download", "");
+                linki[i].setAttribute("target", "_blank")
+
+            }
+        }
+
+        function logujNazwe(co){
+            console.log("Kliknieto: "+co);
+            if(document.getElementById('pobieranie').checked != true){
+                document.getElementById('tytul').setAttribute("class", "widoczne");
+                document.getElementById('tytul').innerText = co
+
+            }
+        }
+    </script>
+</head>
+<body onload="odtwarzacz()">
+    <div class="odtwarzacz-spacer"></div>
+    <iframe src="" id="odtwarzacz-iframe" name="odtwarzacz-iframe"></iframe>
+    <div class="selektor"><table><tr><td><label for="pobieranie"><input name="pobieranie" onclick="zmiana()" id="pobieranie" type="checkbox" autocomplete="off">Pobieranie</label></td></tr></table></div>
+    <h1 id="tytul" class="niewidoczne">asdsad</h1>
